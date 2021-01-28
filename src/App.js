@@ -5,12 +5,17 @@ import ThankYou from "./ThankYou";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import { set } from "lodash";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  background: white;
+`;
 
 const App = () => {
   const [pizzaOrder, setPizzaOrder] = useState(null);
 
   return (
-    <div>
+    <StyledDiv>
       <NavBar />
       <Switch>
         <Route path="/PizzaForm">
@@ -23,7 +28,7 @@ const App = () => {
           <Home />
         </Route>
       </Switch>
-    </div>
+    </StyledDiv>
   );
 };
 export default App;

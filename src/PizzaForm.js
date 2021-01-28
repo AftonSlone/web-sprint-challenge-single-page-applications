@@ -3,6 +3,18 @@ import React, { useState, useEffect } from "react";
 import * as yup from "yup";
 import schema from "./validation/formSchema";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  background: white;
+  margin: 1%;
+  h2 {
+    font-size: 30px;
+  }
+  h3 {
+    background: grey;
+  }
+`;
 
 const initialFormValues = {
   size: "",
@@ -83,7 +95,7 @@ export default function PizzaForm(props) {
   }, [formValues]);
 
   return (
-    <div>
+    <StyledDiv>
       <form onSubmit={formSubmit}>
         <div>
           <h2>Build Your Own Pizza</h2>
@@ -180,6 +192,6 @@ export default function PizzaForm(props) {
           <button disabled={disabled}>Submit Order</button>
         </div>
       </form>
-    </div>
+    </StyledDiv>
   );
 }
